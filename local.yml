@@ -1,0 +1,11 @@
+---
+- name: Transfer and execute a script.
+  hosts: all
+  remote_user: meriem
+  sudo: yes
+  tasks:
+     - name: Transfer the script
+       copy: src=write.sh dest=/home/meriem mode=0777
+
+     - name: Execute the script
+       command: sh /home/meriem/write.sh
